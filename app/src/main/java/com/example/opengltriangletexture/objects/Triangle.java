@@ -45,9 +45,19 @@ public class Triangle {
                triangleProgram.getColorAttributeLocation(),
                COLOR_COMPONENT_COUNT, STRIDE);
 
+//       vertexArray.setVertexAttribPointer(6,
+//               triangleProgram.getTexCoordAttributeLocation(),
+//               TEXTURE_COMPONENT_COUNT, STRIDE);
+
        vertexArray.setVertexAttribPointer(6,
-               triangleProgram.getTexCoordAttributeLocation(),
-               TEXTURE_COMPONENT_COUNT, STRIDE);
+               triangleProgram.getTexture1AttributeLocation(),
+               TEXTURE_COMPONENT_COUNT,
+               STRIDE);
+
+       vertexArray.setVertexAttribPointer(6,
+               triangleProgram.getTexture2AttributeLocation(),
+               TEXTURE_COMPONENT_COUNT,
+               STRIDE);
    }
 
    public void draw() {

@@ -22,6 +22,7 @@ import com.example.opengltriangletexture.utils.TextureHelper;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
+import java.util.ArrayList;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
@@ -34,7 +35,9 @@ public class TriangleRenderer implements GLSurfaceView.Renderer {
 
     private TriangleProgram triangleProgram;
     private Triangle triangle;
-    private int texture;
+    private int texture1;
+    private int texture2;
+
 
     private float[] projectionMatrix = new float[16];
 //    private final float[] modelMatrix = new float[16];
@@ -52,7 +55,8 @@ public class TriangleRenderer implements GLSurfaceView.Renderer {
         triangleProgram = new TriangleProgram(context);
         triangle = new Triangle();
 
-        texture = TextureHelper.loadTexture(context, R.drawable.wall);
+        texture1 = TextureHelper.loadTexture(context, R.drawable.wall);
+        texture2 = TextureHelper.loadTexture(context, R.drawable.awesomeface);
     }
 
     @Override
@@ -79,7 +83,8 @@ public class TriangleRenderer implements GLSurfaceView.Renderer {
     private void drawTriangles() {
         triangleProgram.useProgram();
 //        triangleProgram.setUniforms(projectionMatrix, texture);
-        triangleProgram.setUniforms(texture);
+        triangleProgram.setUniforms(texture1, texture2);
+
         triangle.bindData(triangleProgram);
         triangle.draw();
     }
