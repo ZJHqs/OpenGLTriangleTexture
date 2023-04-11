@@ -22,7 +22,7 @@ public class TriangleProgram {
     private static final String U_TEXTURE2 = "u_Texture2";
 //    private static final String U_MATRIX = "u_Matrix";
     private static final String A_POSITION = "a_Position";
-    private static final String A_COLOR = "a_Color";
+//    private static final String A_COLOR = "a_Color";
 //    private static final String A_TEXCOORD = "a_TexCoord";
 private static final String A_TEXCOORD1 = "a_TexCoord1";
     private static final String A_TEXCOORD2 = "a_TexCoord2";
@@ -33,7 +33,7 @@ private static final String A_TEXCOORD1 = "a_TexCoord1";
     private final int uTextureLocation2;
 //    private final int uMatrixLocation;
     private final int aPositionLocation;
-    private final int aColorLocation;
+//    private final int aColorLocation;
 //    private final int aTexCoordLocation;
     private final int aTexCoordLocation1;
     private final int aTexCoordLocation2;
@@ -55,7 +55,7 @@ private static final String A_TEXCOORD1 = "a_TexCoord1";
 
 
         aPositionLocation = GLES20.glGetAttribLocation(program, A_POSITION);
-        aColorLocation = GLES20.glGetAttribLocation(program, A_COLOR);
+//        aColorLocation = GLES20.glGetAttribLocation(program, A_COLOR);
 //        aTexCoordLocation = GLES20.glGetAttribLocation(program, A_TEXCOORD);
         aTexCoordLocation1 = GLES20.glGetAttribLocation(program, A_TEXCOORD1);
         aTexCoordLocation2 = GLES20.glGetAttribLocation(program, A_TEXCOORD2);
@@ -65,9 +65,9 @@ private static final String A_TEXCOORD1 = "a_TexCoord1";
         return aPositionLocation;
     }
 
-    public int getColorAttributeLocation() {
-        return aColorLocation;
-    }
+//    public int getColorAttributeLocation() {
+//        return aColorLocation;
+//    }
 
 //    public int getTexCoordAttributeLocation() {
 //        return aTexCoordLocation;
