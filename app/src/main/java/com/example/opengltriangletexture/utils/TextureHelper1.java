@@ -1,6 +1,7 @@
 package com.example.opengltriangletexture.utils;
 
 import static android.opengl.GLES20.GL_CLAMP_TO_EDGE;
+import static android.opengl.GLES20.GL_MIRRORED_REPEAT;
 import static android.opengl.GLES20.GL_REPEAT;
 import static android.opengl.GLES20.GL_TEXTURE_2D;
 import static android.opengl.GLES20.GL_TEXTURE_WRAP_S;
@@ -13,9 +14,9 @@ import android.graphics.BitmapFactory;
 import android.opengl.GLES20;
 import android.util.Log;
 
-public class TextureHelper {
+public class TextureHelper1 {
 
-    private static final String TAG = "TextureHelper";
+    private static final String TAG = "TextureHelper1";
 
     public static int loadTexture(Context context, int resourceId) {
         final int[] textureObjectIds = new int[1];
@@ -42,8 +43,8 @@ public class TextureHelper {
 
         GLES20.glBindTexture(GL_TEXTURE_2D, textureObjectIds[0]);
 
-        GLES20.glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-        GLES20.glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+        GLES20.glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+        GLES20.glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
 
         GLES20.glTexParameteri(GL_TEXTURE_2D, GLES20.GL_TEXTURE_MIN_FILTER, GLES20.GL_LINEAR);
         GLES20.glTexParameteri(GL_TEXTURE_2D, GLES20.GL_TEXTURE_MAG_FILTER, GLES20.GL_LINEAR);
@@ -58,5 +59,4 @@ public class TextureHelper {
 
         return textureObjectIds[0];
     }
-
 }

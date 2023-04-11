@@ -18,6 +18,7 @@ import com.example.opengltriangletexture.utils.MatrixHelper;
 import com.example.opengltriangletexture.utils.ShaderHelper;
 import com.example.opengltriangletexture.utils.TextResourceReader;
 import com.example.opengltriangletexture.utils.TextureHelper;
+import com.example.opengltriangletexture.utils.TextureHelper1;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -56,7 +57,7 @@ public class TriangleRenderer implements GLSurfaceView.Renderer {
         triangle = new Triangle();
 
         texture1 = TextureHelper.loadTexture(context, R.drawable.wall);
-        texture2 = TextureHelper.loadTexture(context, R.drawable.awesomeface);
+        texture2 = TextureHelper1.loadTexture(context, R.drawable.awesomeface);
     }
 
     @Override
